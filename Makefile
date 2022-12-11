@@ -24,7 +24,7 @@ default: rom.bin compare
 setup:
 	mkdir -p ./baserom_files/
 	./tools/extract_baserom.py $(BASEROM) ./baserom_files/ $(VERSION)
-	find assets -name '*.xml' -exec sh -c 'cpp -P -DVERSION=$(VERSION) {} | ./tools/extract_assets.py ./baserom_files/ {}' \;
+	find assets -name '*.xml' -exec sh -c 'cpp -P -DVERSION=$(VERSION) {} | ./tools/extract_assets.py ./baserom_files/ ./assets/_extracted/ {}' \;
 
 rom.bin: build/rom.elf
 	objcopy -O binary $< $@

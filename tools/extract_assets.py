@@ -2,7 +2,7 @@
 """
 Extract assets from baserom files
 
-extract_assets.py <baserom_files_dir> <xml_path>
+extract_assets.py <baserom_files_dir> <extracted_folder_root_path> <xml_path>
 xml contents on stdin
 """
 
@@ -13,9 +13,10 @@ import sys
 from xml.etree import ElementTree
 
 baserom_files_dir = Path(sys.argv[1])
-xml_path = Path(sys.argv[2])
+extracted_folder_root_path = Path(sys.argv[2])
+xml_path = Path(sys.argv[3])
 
-extracted_folder_path = Path("assets/_extracted").joinpath(*xml_path.parent.parts[1:])
+extracted_folder_path = extracted_folder_root_path.joinpath(*xml_path.parent.parts[1:])
 
 print(xml_path, "->", extracted_folder_path)
 
