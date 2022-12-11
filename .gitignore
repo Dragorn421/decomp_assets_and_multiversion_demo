@@ -1,0 +1,9 @@
+assets/_extracted/
+
+build/
+baserom_files/
+baseroms/
+
+*.bin
+
+.vscode

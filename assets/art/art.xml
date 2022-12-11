@@ -1,0 +1,9 @@
+<Root>
+    <File Name="art.bin">
+        <Png OutName="purple" Offset="0x0020" Size="0x2BF3"/>
+
+#if VERSION==1
+        <Png OutName="toonlink" Offset="0x2C20" Size="0x2FA8"/>
+#endif
+    </File>
+</Root>
